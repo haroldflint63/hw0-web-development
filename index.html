@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW0 Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>HW0 Demo</h1>
+        <nav aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#form">Form</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <figure>
+                <img src="assets/rock.jpg" alt="Layered sedimentary rock formation" loading="lazy" width="640" height="427">
+                <figcaption>Example of sedimentary layering</figcaption>
+            </figure>
+            <p data-topic="geology">This page demonstrates semantic HTML and accessible attributes.</p>
+        </section>
+
+        <section id="form" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <form>
+                <label>
+                    Email
+                    <input type="email" name="email" placeholder="you@school.edu" required autocomplete="email">
+                </label>
+                <label>
+                    Favorite number
+                    <input type="number" name="fav" min="1" max="10" step="1">
+                </label>
+                <button type="submit">Send</button>
+            </form>
+            <details>
+                <summary>More info</summary>
+                <p>This uses &lt;details&gt; and &lt;summary&gt; elements.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2025 Your Name • <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN</a></small>
+    </footer>
+
+    <script defer src="script.js"></script>
+</body>
+</html>

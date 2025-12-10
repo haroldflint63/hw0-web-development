@@ -49,14 +49,14 @@ function validateFavField() {
 
 // Show error message
 function showError(input, errorElement, message) {
-  if (!errorElement) return;
+  if (!input || !errorElement) return;
   errorElement.textContent = message;
   input.setAttribute('aria-invalid', 'true');
 }
 
 // Clear error message
 function clearError(input, errorElement) {
-  if (!errorElement) return;
+  if (!input || !errorElement) return;
   errorElement.textContent = '';
   input.removeAttribute('aria-invalid');
 }

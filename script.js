@@ -7,8 +7,13 @@ const favError = document.querySelector('#fav-error');
 const formMessages = document.querySelector('#form-messages');
 const submitBtn = document.querySelector('#submit-btn');
 
+// Constants
+const FORM_SUBMISSION_DELAY = 1000; // milliseconds
+
 // Email validation function
 function validateEmail(email) {
+  // Basic email validation that covers most common cases
+  // For production, consider using HTML5 validation or a library
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
@@ -126,7 +131,7 @@ if (form) {
         
         // Reset form
         form.reset();
-      }, 1000);
+      }, FORM_SUBMISSION_DELAY);
     } else {
       showFormMessage('Please fix the errors above', 'error');
     }

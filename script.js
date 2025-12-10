@@ -13,6 +13,35 @@ function validateEmail(email) {
   return emailRegex.test(email);
 }
 
+// Validate email field
+function validateEmailField() {
+  const email = emailInput?.value.trim() || '';
+  
+  if (!email) {
+    showError(emailInput, emailError, 'Email is required');
+    return false;
+  } else if (!validateEmail(email)) {
+    showError(emailInput, emailError, 'Please enter a valid email address');
+    return false;
+  } else {
+    clearError(emailInput, emailError);
+    return true;
+  }
+}
+
+// Validate favorite number field
+function validateFavField() {
+  const fav = favInput?.value || '';
+  
+  if (fav && (fav < 1 || fav > 10)) {
+    showError(favInput, favError, 'Please enter a number between 1 and 10');
+    return false;
+  } else {
+    clearError(favInput, favError);
+    return true;
+  }
+}
+
 // Show error message
 function showError(input, errorElement, message) {
   if (!errorElement) return;
@@ -43,15 +72,7 @@ function showFormMessage(message, type) {
 // Real-time email validation
 if (emailInput) {
   emailInput.addEventListener('blur', () => {
-    const email = emailInput.value.trim();
-    
-    if (!email) {
-      showError(emailInput, emailError, 'Email is required');
-    } else if (!validateEmail(email)) {
-      showError(emailInput, emailError, 'Please enter a valid email address');
-    } else {
-      clearError(emailInput, emailError);
-    }
+    validateEmailField();
   });
   
   emailInput.addEventListener('input', () => {
@@ -64,13 +85,7 @@ if (emailInput) {
 // Real-time favorite number validation
 if (favInput) {
   favInput.addEventListener('blur', () => {
-    const value = favInput.value;
-    
-    if (value && (value < 1 || value > 10)) {
-      showError(favInput, favError, 'Please enter a number between 1 and 10');
-    } else {
-      clearError(favInput, favError);
-    }
+    validateFavField();
   });
   
   favInput.addEventListener('input', () => {
@@ -83,31 +98,15 @@ if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    let isValid = true;
-    
-    // Validate email
-    const email = emailInput.value.trim();
-    if (!email) {
-      showError(emailInput, emailError, 'Email is required');
-      isValid = false;
-    } else if (!validateEmail(email)) {
-      showError(emailInput, emailError, 'Please enter a valid email address');
-      isValid = false;
-    } else {
-      clearError(emailInput, emailError);
-    }
-    
-    // Validate favorite number (optional field)
-    const fav = favInput.value;
-    if (fav && (fav < 1 || fav > 10)) {
-      showError(favInput, favError, 'Please enter a number between 1 and 10');
-      isValid = false;
-    } else {
-      clearError(favInput, favError);
-    }
+    // Validate all fields
+    const isEmailValid = validateEmailField();
+    const isFavValid = validateFavField();
+    const isValid = isEmailValid && isFavValid;
     
     // If validation passes, show success message
     if (isValid) {
+      const email = emailInput.value.trim();
+      
       // Show loading state
       if (submitBtn) {
         submitBtn.classList.add('loading');

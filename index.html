@@ -27,16 +27,19 @@
 
         <section id="form" aria-labelledby="contact-title">
             <h2 id="contact-title">Contact</h2>
-            <form>
+            <div id="form-messages" role="alert" aria-live="polite" class="hidden"></div>
+            <form id="contact-form" novalidate>
                 <label>
                     Email
-                    <input type="email" name="email" placeholder="you@school.edu" required autocomplete="email">
+                    <input type="email" name="email" id="email" placeholder="you@school.edu" required autocomplete="email" aria-describedby="email-error">
+                    <span id="email-error" class="error-message" role="alert"></span>
                 </label>
                 <label>
                     Favorite number
-                    <input type="number" name="fav" min="1" max="10" step="1">
+                    <input type="number" name="fav" id="fav" min="1" max="10" step="1" aria-describedby="fav-error">
+                    <span id="fav-error" class="error-message" role="alert"></span>
                 </label>
-                <button type="submit">Send</button>
+                <button type="submit" id="submit-btn">Send</button>
             </form>
             <details>
                 <summary>More info</summary>

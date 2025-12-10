@@ -15,18 +15,21 @@ function validateEmail(email) {
 
 // Show error message
 function showError(input, errorElement, message) {
+  if (!errorElement) return;
   errorElement.textContent = message;
   input.setAttribute('aria-invalid', 'true');
 }
 
 // Clear error message
 function clearError(input, errorElement) {
+  if (!errorElement) return;
   errorElement.textContent = '';
   input.removeAttribute('aria-invalid');
 }
 
 // Show form message (success or error)
 function showFormMessage(message, type) {
+  if (!formMessages) return;
   formMessages.textContent = message;
   formMessages.className = type; // 'success' or 'error'
   formMessages.setAttribute('role', 'alert');
@@ -106,15 +109,19 @@ if (form) {
     // If validation passes, show success message
     if (isValid) {
       // Show loading state
-      submitBtn.classList.add('loading');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending';
+      if (submitBtn) {
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending';
+      }
       
-      // Simulate form submission (remove this timeout in production)
+      // Simulate form submission (in production, replace with actual API call)
       setTimeout(() => {
-        submitBtn.classList.remove('loading');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send';
+        if (submitBtn) {
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send';
+        }
         
         showFormMessage(`Thank you! We will contact you at ${email}`, 'success');
         

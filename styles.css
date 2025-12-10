@@ -68,7 +68,7 @@
 
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not(.light-mode) {
         --color-text: #f9fafb;
         --color-text-light: #d1d5db;
         --color-bg: #111827;

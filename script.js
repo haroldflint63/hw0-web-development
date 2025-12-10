@@ -2,6 +2,12 @@
 // Advanced JavaScript with ES6+ Features
 // ===========================
 
+// Constants
+// ===========================
+const FORM_SUBMISSION_DELAY = 1500; // milliseconds
+const DEBOUNCE_DELAY = 300; // milliseconds
+const NOTIFICATION_DURATION = 5000; // milliseconds
+
 // Utility Functions
 // ===========================
 
@@ -47,10 +53,10 @@ const showNotification = (message, type = 'success') => {
     notification.className = `notification ${type}`;
     notification.hidden = false;
     
-    // Auto-hide after 5 seconds
+    // Auto-hide after duration
     setTimeout(() => {
         notification.hidden = true;
-    }, 5000);
+    }, NOTIFICATION_DURATION);
 };
 
 /**
@@ -129,8 +135,8 @@ const validators = {
         message: 'Please enter a valid phone number (e.g., (123) 456-7890)'
     },
     name: {
-        pattern: /^[a-zA-Z\s]{2,50}$/,
-        message: 'Name must be 2-50 characters and contain only letters'
+        pattern: /^[a-zA-ZÀ-ÿ\s\-']{2,50}$/,
+        message: 'Name must be 2-50 characters and may include letters, spaces, hyphens, and apostrophes'
     }
 };
 
@@ -273,7 +279,7 @@ const initFormValidation = () => {
                     validateField(field);
                 }
                 updateFormProgress();
-            }, 300));
+            }, DEBOUNCE_DELAY));
         }
         
         // Update progress on change for other fields
@@ -286,7 +292,7 @@ const initFormValidation = () => {
     // Character count for message field
     const messageField = document.getElementById('message');
     if (messageField) {
-        messageField.addEventListener('input', debounce(updateCharacterCount, 100));
+        messageField.addEventListener('input', debounce(updateCharacterCount, DEBOUNCE_DELAY));
     }
     
     // Form submission
@@ -322,7 +328,7 @@ const initFormValidation = () => {
         
         try {
             // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            await new Promise(resolve => setTimeout(resolve, FORM_SUBMISSION_DELAY));
             
             const formData = new FormData(form);
             const email = sanitizeInput(formData.get('email'));

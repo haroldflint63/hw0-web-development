@@ -3,50 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW0 Demo</title>
+    <meta name="description" content="Advanced web development demonstration showcasing modern HTML5, CSS3, and ES6+ JavaScript with accessibility features">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript, Web Development, Responsive Design, Accessibility">
+    <meta name="author" content="Harold Flint">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://haroldflint63.github.io/hw0-web-development/">
+    <meta property="og:title" content="HW0 - Modern Web Development Demo">
+    <meta property="og:description" content="Advanced web development demonstration with professional features">
+    <meta property="og:image" content="https://haroldflint63.github.io/hw0-web-development/assets/hero-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HW0 - Modern Web Development Demo">
+    <meta name="twitter:description" content="Advanced web development demonstration">
+    
+    <title>HW0 - Modern Web Development Demo</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "HW0 Web Development",
+      "url": "https://haroldflint63.github.io/hw0-web-development/",
+      "description": "Advanced web development demonstration"
+    }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>HW0 Demo</h1>
-        <nav aria-label="Primary">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
+        <div class="header-content">
+            <h1>HW0 - Modern Web Development</h1>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle between light and dark theme">
+                <span class="theme-icon">🌓</span>
+            </button>
+        </div>
+        <nav aria-label="Primary Navigation" role="navigation">
             <a href="#about">About</a>
-            <a href="#form">Form</a>
+            <a href="#form">Contact</a>
+            <a href="#features">Features</a>
         </nav>
     </header>
 
-    <main>
-        <section id="about">
-            <h2>About</h2>
-            <figure>
-                <img src="assets/rock.jpg" alt="Layered sedimentary rock formation" loading="lazy" width="640" height="427">
-                <figcaption>Example of sedimentary layering</figcaption>
-            </figure>
-            <p data-topic="geology">This page demonstrates semantic HTML and accessible attributes.</p>
+    <main id="main" role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h2 id="hero-title">Professional Web Development Showcase</h2>
+                <p class="hero-description">Demonstrating advanced HTML5, CSS3, and modern JavaScript features with accessibility and performance in mind.</p>
+            </div>
         </section>
 
-        <section id="form" aria-labelledby="contact-title">
-            <h2 id="contact-title">Contact</h2>
-            <form>
-                <label>
-                    Email
-                    <input type="email" name="email" placeholder="you@school.edu" required autocomplete="email">
-                </label>
-                <label>
-                    Favorite number
-                    <input type="number" name="fav" min="1" max="10" step="1">
-                </label>
-                <button type="submit">Send</button>
-            </form>
-            <details>
-                <summary>More info</summary>
-                <p>This uses &lt;details&gt; and &lt;summary&gt; elements.</p>
+        <!-- About Section -->
+        <section id="about" aria-labelledby="about-title">
+            <h2 id="about-title">About This Project</h2>
+            <figure>
+                <picture>
+                    <source srcset="assets/rock.webp" type="image/webp">
+                    <img src="assets/rock.jpg" srcset="assets/rock.jpg 640w" alt="Layered sedimentary rock formation showing distinct geological strata" loading="lazy" width="640" height="427">
+                </picture>
+                <figcaption>Example of sedimentary layering - demonstrating responsive images with WebP format support</figcaption>
+            </figure>
+            <p data-topic="geology">This page demonstrates semantic HTML5, modern CSS3 features, and ES6+ JavaScript with a focus on accessibility, performance, and user experience.</p>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <h3>🎨 Modern Design</h3>
+                    <p>Professional UI with CSS Grid, Flexbox, and smooth animations</p>
+                </article>
+                <article class="feature-card">
+                    <h3>♿ Accessible</h3>
+                    <p>WCAG AA compliant with ARIA labels and keyboard navigation</p>
+                </article>
+                <article class="feature-card">
+                    <h3>📱 Responsive</h3>
+                    <p>Mobile-first design that works on all screen sizes</p>
+                </article>
+                <article class="feature-card">
+                    <h3>⚡ Performant</h3>
+                    <p>Optimized images, lazy loading, and efficient JavaScript</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" aria-labelledby="features-title">
+            <h2 id="features-title">Advanced Features</h2>
+            <details class="feature-details">
+                <summary>HTML5 Features</summary>
+                <ul>
+                    <li>Semantic markup with proper section elements</li>
+                    <li>ARIA labels and accessibility attributes</li>
+                    <li>Responsive images with picture element and srcset</li>
+                    <li>Advanced form validation attributes</li>
+                    <li>SEO optimization with meta tags and structured data</li>
+                </ul>
             </details>
+            <details class="feature-details">
+                <summary>CSS3 Features</summary>
+                <ul>
+                    <li>CSS Grid and Flexbox layouts</li>
+                    <li>CSS Custom Properties (variables)</li>
+                    <li>Animations and transitions</li>
+                    <li>Dark mode with prefers-color-scheme</li>
+                    <li>Responsive design with mobile-first approach</li>
+                </ul>
+            </details>
+            <details class="feature-details">
+                <summary>JavaScript Features</summary>
+                <ul>
+                    <li>ES6+ syntax (arrow functions, const/let, template literals)</li>
+                    <li>Form validation with regex patterns</li>
+                    <li>LocalStorage for data persistence</li>
+                    <li>Dark/Light theme toggle</li>
+                    <li>Real-time validation feedback</li>
+                </ul>
+            </details>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="form" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact Form</h2>
+            <p class="form-description">Fill out the form below to get in touch. All fields marked with <span class="required-indicator" aria-label="required">*</span> are required.</p>
+            
+            <!-- Success/Error notification area -->
+            <div id="notification" class="notification" role="alert" aria-live="polite" aria-atomic="true" hidden></div>
+            
+            <form id="contact-form" novalidate>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="name">
+                            Full Name <span class="required-indicator" aria-label="required">*</span>
+                            <span class="tooltip" title="Enter your first and last name">ℹ️</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="John Doe" 
+                            required 
+                            minlength="2"
+                            maxlength="50"
+                            autocomplete="name"
+                            aria-required="true"
+                            aria-describedby="name-error">
+                        <span class="error-message" id="name-error" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email Address <span class="required-indicator" aria-label="required">*</span>
+                            <span class="tooltip" title="We'll never share your email">ℹ️</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="you@school.edu" 
+                            required 
+                            autocomplete="email"
+                            aria-required="true"
+                            aria-describedby="email-error">
+                        <span class="error-message" id="email-error" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">
+                            Phone Number
+                            <span class="tooltip" title="Format: (123) 456-7890">ℹ️</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="(123) 456-7890"
+                            pattern="[\(]?[0-9]{3}[\)]?[\s\-]?[0-9]{3}[\s\-]?[0-9]{4}"
+                            autocomplete="tel"
+                            aria-describedby="phone-error">
+                        <span class="error-message" id="phone-error" role="alert"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+                    
+                    <div class="form-group">
+                        <label for="favorite-number">
+                            Favorite Number <span class="required-indicator" aria-label="required">*</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="favorite-number" 
+                            name="fav" 
+                            min="1" 
+                            max="100" 
+                            step="1"
+                            required
+                            aria-required="true"
+                            aria-describedby="fav-error">
+                        <span class="error-message" id="fav-error" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="topic">
+                            Topic of Interest <span class="required-indicator" aria-label="required">*</span>
+                        </label>
+                        <select id="topic" name="topic" required aria-required="true" aria-describedby="topic-error">
+                            <option value="">-- Select a topic --</option>
+                            <option value="web-dev">Web Development</option>
+                            <option value="design">Design</option>
+                            <option value="accessibility">Accessibility</option>
+                            <option value="performance">Performance</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message" id="topic-error" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">
+                            Message <span class="required-indicator" aria-label="required">*</span>
+                        </label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="5" 
+                            placeholder="Enter your message here..."
+                            required
+                            minlength="10"
+                            maxlength="500"
+                            aria-required="true"
+                            aria-describedby="message-error"></textarea>
+                        <span class="error-message" id="message-error" role="alert"></span>
+                        <span class="character-count" id="char-count" aria-live="polite">0 / 500</span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input 
+                                type="checkbox" 
+                                id="newsletter" 
+                                name="newsletter"
+                                value="yes">
+                            <span>Subscribe to newsletter</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input 
+                                type="checkbox" 
+                                id="terms" 
+                                name="terms"
+                                required
+                                aria-required="true"
+                                aria-describedby="terms-error">
+                            <span>I agree to the terms and conditions <span class="required-indicator" aria-label="required">*</span></span>
+                        </label>
+                        <span class="error-message" id="terms-error" role="alert"></span>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-text">Submit Form</span>
+                        <span class="btn-loader" hidden>Submitting...</span>
+                    </button>
+                    <button type="reset" class="btn btn-secondary">Reset Form</button>
+                </div>
+            </form>
+
+            <details class="feature-details">
+                <summary>More Information</summary>
+                <p>This form demonstrates advanced HTML5 form validation, accessibility features, and real-time feedback. It uses modern JavaScript for validation and localStorage to persist your data.</p>
+                <p>Features include: required field validation, email format checking, phone number pattern matching, character counting, and custom error messages.</p>
+            </details>
+        </section>
+
+        <!-- Progress Indicator -->
+        <section class="progress-section" aria-labelledby="progress-title">
+            <h3 id="progress-title">Form Completion Progress</h3>
+            <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Form completion progress">
+                <div class="progress-bar" id="form-progress"></div>
+            </div>
+            <p class="progress-text"><span id="progress-percentage">0</span>% Complete</p>
         </section>
     </main>
 
-    <footer>
-        <small>&copy; 2025 Your Name • <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN</a></small>
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <p><small>&copy; 2025 Harold Flint • <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></small></p>
+            <p><small>Built with HTML5, CSS3, and modern JavaScript</small></p>
+        </div>
     </footer>
 
     <script defer src="script.js"></script>

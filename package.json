@@ -1,0 +1,27 @@
+{
+  "name": "hw0-web-development",
+  "version": "2.0.0",
+  "description": "Advanced web development demonstration with modern HTML5, CSS3, and ES6+ JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Open index.html in your browser' && open index.html || xdg-open index.html || start index.html",
+    "test": "echo 'No tests configured - this is a vanilla HTML/CSS/JS project'"
+  },
+  "keywords": [
+    "html5",
+    "css3",
+    "javascript",
+    "responsive-design",
+    "accessibility",
+    "web-development",
+    "semantic-html",
+    "modern-web"
+  ],
+  "author": "Harold Flint",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haroldflint63/hw0-web-development.git"
+  },
+  "homepage": "https://haroldflint63.github.io/hw0-web-development/"
+}

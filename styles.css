@@ -11,6 +11,11 @@
     --accent: #ec4899;
     --success: #10b981;
     --warning: #f59e0b;
+    --error: #ef4444;
+    
+    /* Gradient Colors */
+    --gradient-start: #667eea;
+    --gradient-end: #764ba2;
     
     /* Neutral Colors */
     --bg: #ffffff;
@@ -255,7 +260,7 @@ body.dark-mode .navbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
     color: white;
     padding: var(--spacing-3xl) var(--spacing-xl);
     overflow: hidden;
@@ -361,14 +366,14 @@ body.dark-mode .navbar {
 
 .btn-primary {
     background: white;
-    color: #667eea;
+    color: var(--gradient-start);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    color: #667eea;
+    color: var(--gradient-start);
 }
 
 .btn-secondary {
@@ -379,7 +384,7 @@ body.dark-mode .navbar {
 
 .btn-secondary:hover {
     background: white;
-    color: #667eea;
+    color: var(--gradient-start);
 }
 
 .btn-block {
@@ -686,7 +691,7 @@ section {
 
 .form-group input.error,
 .form-group textarea.error {
-    border-color: #ef4444;
+    border-color: var(--error);
 }
 
 .form-group input.success,
@@ -696,7 +701,7 @@ section {
 
 .error-message {
     display: block;
-    color: #ef4444;
+    color: var(--error);
     font-size: 0.875rem;
     margin-top: var(--spacing-xs);
     min-height: 1.25rem;
@@ -888,7 +893,7 @@ section {
 }
 
 .toast.error {
-    border-left: 4px solid #ef4444;
+    border-left: 4px solid var(--error);
 }
 
 /* ================================

@@ -170,33 +170,45 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
+// Check if IntersectionObserver is supported
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-// Observe elements for scroll animations
-function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll(
-        '.skill-card, .project-card, .stat-item, .contact-method, .about-content, .about-stats'
-    );
-    
-    animatedElements.forEach((element, index) => {
-        element.classList.add('fade-in');
-        element.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(element);
-    });
-}
+    // Observe elements for scroll animations
+    function initScrollAnimations() {
+        const animatedElements = document.querySelectorAll(
+            '.skill-card, .project-card, .stat-item, .contact-method, .about-content, .about-stats'
+        );
+        
+        animatedElements.forEach((element, index) => {
+            element.classList.add('fade-in');
+            element.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(element);
+        });
+    }
 
-// Initialize animations when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initScrollAnimations);
+    // Initialize animations when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+    } else {
+        initScrollAnimations();
+    }
 } else {
-    initScrollAnimations();
+    // Fallback: Show all elements immediately if IntersectionObserver not supported
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+        });
+    } else {
+        document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }
 }
 
 // ================================

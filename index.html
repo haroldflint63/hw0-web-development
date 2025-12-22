@@ -3,51 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW0 Demo</title>
+    <meta name="description" content="Professional portfolio showcasing web development skills with HTML, CSS, and JavaScript">
+    <meta name="author" content="Professional Developer">
+    <meta name="keywords" content="web development, HTML, CSS, JavaScript, portfolio">
+    <title>Professional Portfolio - Web Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <!-- Navigation -->
     <header>
-        <h1>HW0 Demo</h1>
-        <nav aria-label="Primary">
-            <a href="#about">About</a>
-            <a href="#form">Form</a>
+        <nav aria-label="Primary navigation" class="navbar">
+            <div class="nav-brand">
+                <h1>Portfolio</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="about">
-            <h2>About</h2>
-            <figure>
-                <img src="assets/rock.jpg" alt="Layered sedimentary rock formation" loading="lazy" width="640" height="427">
-                <figcaption>Example of sedimentary layering</figcaption>
-            </figure>
-            <p data-topic="geology">This page demonstrates semantic HTML and accessible attributes.</p>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Building the Future with Code</h2>
+                <p class="hero-subtitle">Full-Stack Developer | UI/UX Enthusiast | Problem Solver</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-wave">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="wave-path"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="wave-path"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="wave-path"></path>
+                </svg>
+            </div>
         </section>
 
-        <section id="form" aria-labelledby="contact-title">
-            <h2 id="contact-title">Contact</h2>
-            <form>
-                <label>
-                    Email
-                    <input type="email" name="email" placeholder="you@school.edu" required autocomplete="email">
-                </label>
-                <label>
-                    Favorite number
-                    <input type="number" name="fav" min="1" max="10" step="1">
-                </label>
-                <button type="submit">Send</button>
-            </form>
-            <details>
-                <summary>More info</summary>
-                <p>This uses &lt;details&gt; and &lt;summary&gt; elements.</p>
-            </details>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/400/400?random=1" alt="Professional developer workspace" loading="lazy">
+                    </div>
+                    <div class="about-text">
+                        <p>I'm a passionate web developer dedicated to creating beautiful, functional, and accessible web experiences. With expertise in modern web technologies, I transform ideas into elegant digital solutions.</p>
+                        <p>My approach combines clean code, user-centered design, and performance optimization to deliver exceptional results. I believe in continuous learning and staying current with the latest web development trends.</p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Client Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">💻</div>
+                        <h3>Frontend Development</h3>
+                        <p>HTML5, CSS3, JavaScript, React, Vue.js, responsive design</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">⚙️</div>
+                        <h3>Backend Development</h3>
+                        <p>Node.js, Python, Express, RESTful APIs, database design</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h3>UI/UX Design</h3>
+                        <p>Figma, Adobe XD, wireframing, prototyping, user research</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🚀</div>
+                        <h3>Performance</h3>
+                        <p>Optimization, lazy loading, caching, CDN, web vitals</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">♿</div>
+                        <h3>Accessibility</h3>
+                        <p>WCAG compliance, ARIA, semantic HTML, screen readers</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🔧</div>
+                        <h3>Dev Tools</h3>
+                        <p>Git, GitHub, VS Code, Chrome DevTools, npm/yarn</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://picsum.photos/600/400?random=2" alt="E-commerce platform project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>A full-featured online shopping platform with cart management, payment integration, and real-time inventory tracking.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://picsum.photos/600/400?random=3" alt="Task management app project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Task Management App</h3>
+                            <p>Collaborative project management tool with drag-and-drop interface, real-time updates, and team collaboration features.</p>
+                            <div class="project-tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">Tailwind</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://picsum.photos/600/400?random=4" alt="Weather dashboard project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Weather Dashboard</h3>
+                            <p>Beautiful weather application with real-time data, forecasts, and interactive maps using modern APIs.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">API</span>
+                                <span class="tag">CSS Grid</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p class="contact-description">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <span class="method-icon">📧</span>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>contact@example.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <span class="method-icon">📱</span>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <span class="method-icon">📍</span>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                            <span class="error-message" role="alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email">
+                            <span class="error-message" role="alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            <span class="error-message" role="alert"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+                <details class="contact-details">
+                    <summary>Additional Information</summary>
+                    <p>This contact form demonstrates HTML5 form validation, semantic elements, and accessible design patterns. All fields are validated before submission.</p>
+                </details>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <small>&copy; 2025 Your Name • <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN</a></small>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Professional Developer</h3>
+                    <p>Building exceptional web experiences</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub" title="GitHub">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" title="Twitter">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="CodePen" title="CodePen">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M24 8.182l-.018-.087-.017-.05c-.01-.024-.018-.05-.03-.075-.003-.018-.015-.034-.02-.05l-.035-.067-.03-.05-.044-.06-.046-.045-.06-.045-.046-.03-.06-.044-.044-.04-.015-.02L12.58.19c-.347-.232-.796-.232-1.142 0L.453 7.502l-.015.015-.044.035-.06.05-.038.04-.05.056-.037.045-.05.06c-.02.017-.03.03-.03.046l-.05.06-.02.06c-.02.01-.02.04-.03.07l-.01.05C0 8.12 0 8.15 0 8.18v7.497c0 .044.003.09.01.135l.01.046c.005.03.01.06.02.086l.015.05c.01.027.016.053.027.075l.022.05c0 .01.015.04.03.06l.03.04c.015.01.03.04.045.06l.03.04.04.04c.01.013.01.03.03.03l.06.042.04.03.01.014 10.97 7.33c.164.12.375.163.57.163s.39-.06.57-.18l10.99-7.28.014-.01.046-.037.06-.043.048-.036.052-.058.033-.045.04-.06.03-.05.03-.07.016-.052.03-.077.015-.045.03-.08v-7.5c0-.05 0-.095-.016-.14l-.014-.045.044.003zm-11.99 6.28l-3.65-2.44 3.65-2.442 3.65 2.44-3.65 2.44zm-1.034-6.674l-4.473 2.99L2.89 8.362l8.086-5.39V7.79zm-6.33 4.233l-2.582 1.73V10.3l2.582 1.726zm1.857 1.25l4.473 2.99v4.82L2.89 15.69l3.618-2.417v-.004zm6.537 2.99l4.474-2.98 3.613 2.42-8.087 5.39v-4.82zm6.33-4.23l2.583-1.72v3.456l-2.583-1.73zm-1.855-1.24L13.042 7.8V2.97l8.085 5.39-3.612 2.415v.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <small>&copy; 2025 Professional Developer. All rights reserved. • <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></small>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
     <script defer src="script.js"></script>
 </body>
